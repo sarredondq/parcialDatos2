@@ -1,3 +1,4 @@
+#metodo que ordena segun la condicion dada del problema
 def ordenamiento1 arr
   tem1 = Array.new
   tem2 = Array.new
@@ -34,7 +35,7 @@ def ordenamiento1 arr
   return tem3
 end
 
-
+#main que recive el archivo de entrada y produce la salida
 argumetos = ARGV
 i=0
 entrada = Array.new
@@ -43,9 +44,10 @@ file.each_line do |l|
   i = i + 1
   peso,ci = l.chomp.split
   entrada << [peso.to_i,ci.to_i,i]
-  
 end
-
+entrada.delete_at(0)
+i=i-1
+puts i
 result = ordenamiento1(entrada)
 result.each do |x|
   puts x[2]
